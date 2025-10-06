@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Enrollment System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Student Enrollment System</h1>
+
+  <!-- === STUDENT FORM === -->
+  <section>
+    <h2>Student Management</h2>
+    <form id="studentForm">
+      <input type="hidden" id="studentId" />
+      <input type="text" id="studentName" placeholder="Student Name" required />
+      <input type="number" id="allowance" placeholder="Allowance" required />
+
+      <select id="programId" required>
+        <option value="">Select Program</option>
+      </select>
+      
+      <select id="semesterId" required>
+        <option value="">Select Semester</option>
+      </select>
+      
+      <select id="yearId" required>
+        <option value="">Select Year</option>
+      </select>      
+
+      <button type="submit">Save Student</button>
+    </form>
+
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Program</th>
+          <th>Semester</th>
+          <th>Year</th>
+          <th>Allowance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+<!-- PROGRAMS -->
+<section>
+  <h2>Program Management</h2>
+  <form id="programForm">
+    <!-- hidden field for edit/update -->
+    <input type="hidden" id="editProgramId" />
+    <input type="text" id="programName" placeholder="Program Name" required />
+    <button type="submit">Add Program</button>
+  </form>
+
+  <table id="programsTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Program Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+  <!-- YEARS -->
+<section>
+  <h2>Year Management</h2>
+  <form id="yearForm">
+    <input type="hidden" id="editYearId" />
+    <input type="text" id="yearName" placeholder="Enter Year" required />
+    <button type="submit">Save Year</button>
+  </form>
+
+  <table id="yearsTable" border="1" width="100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Year Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+
+  <!-- SEMESTERS -->
+  <section>
+    <h2>Semester Management</h2>
+    <form id="semForm">
+      <input type="text" id="semName" placeholder="Semester Name" required />
+      <button type="submit">Add Semester</button>
+    </form>
+  
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Semester Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="semestersTable"></tbody>
+    </table>
+  </section>
+  
+
+  <!-- SUBJECTS -->
+  <section>
+    <h2>Subject Management</h2>
+  <form id="subjForm">
+    <input type="text" id="subjName" placeholder="Subject Name" required />
+    <input type="number" id="subjUnits" placeholder="Units" required />
+    <input type="text" id="subjRoom" placeholder="Room" required />
+    <input type="time" id="subjStartTime" required />
+    <input type="time" id="subjEndTime" required />
+    <select id="subjDay" required>
+      <option value="">Select Day</option>
+      <option value="MWF">MWF</option>
+      <option value="TTH">TTH</option>
+      <option value="SAT">SAT</option>
+    </select>
+    <button type="submit">Save Subject</button>
+  </form>
+  
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Subject Name</th>
+        <th>Units</th>
+        <th>Room</th>
+        <th>Schedule</th>
+        <th>Day</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="subjectsTable"></tbody>
+  </table>
+  </section>
+  
+
+  <!-- ENROLLMENT -->
+  <section>
+    <h2>Enrollment Management</h2>
+    <form id="enrollForm">
+      <label>Student</label>
+      <select id="enrollStudentId" required></select>
+
+      <label>Subject</label>
+      <select id="enrollSubjId" required></select>
+
+      <button type="submit">Enroll</button>
+    </form>
+
+    <h3>Enrolled Subjects</h3>
+    <table id="enrollmentTable" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student</th>
+          <th>Subject</th>
+          <th>Units</th>
+          <th>Room</th>
+          <th>Schedule</th>
+          <th>Day</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>    
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
